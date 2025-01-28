@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingUIKitEditor = false
+    
     var body: some View {
         VStack {
             Button(action: {
-                // 버튼 액션을 여기에 추가할 수 있습니다
+                showingUIKitEditor = true
             }) {
                 Text("UIKit Editor")
             }
             .buttonStyle(PrimaryButtonStyle())
         }
         .padding()
+        .fullScreenCover(isPresented: $showingUIKitEditor) {
+            UIKitEditorView()
+        }
     }
 }
 
