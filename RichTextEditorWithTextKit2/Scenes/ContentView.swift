@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button(action: {
+                // 버튼 액션을 여기에 추가할 수 있습니다
+            }) {
+                Text("UIKit Editor")
+            }
+            .buttonStyle(PrimaryButtonStyle())
         }
         .padding()
     }
